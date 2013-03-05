@@ -16,17 +16,30 @@
 	    </header>
 
     	<section id="test-page">
-            <h1>Session 1</h1>
+            <h1>Session <span class='current-session'>1</span></h1>
+            <h3>Current Course: <span class='current-course'>Default</span></h3>
             <article>
                 <h2>Word</h2>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                
+                    <label class="radio">
+                        <input type="radio" name="optionsRadios" id="options1" value="option1" checked>none
+                        
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="optionsRadios" id="options2" value="option2">
+                        none
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="optionsRadios" id="options3" value="options3">
+                        none
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="optionsRadios" id="options4" value="options4">
+                        none
+                    </label>
+
+      
                 <button id="next-question">Next</button>
+                <a href="study.html" id="next-session">Next Study Session</a>
             </article>
         
             

@@ -5,15 +5,26 @@ function Study(){
 	var activeWordIndex = 0;
 
 
-	this.init = function(){
+	this.init = function(courseType, sessionNo){
+
+		// Set Course
+		if(courseType == 'transitional'){
+			$('.current-course').text('Transitional Retrieval');
+		}else if(courseType == 'equally'){
+			$('.current-course').text('Equally Spaced Retrieval');
+		}
+
+
+		// Set Session
+		$('.current-session').text(sessionNo);
 
 		// Set default word
-		$('#tran-study-page h2').text(currentSession.wordList[0].word);
-		$('#tran-study-page p').text(currentSession.wordList[0].definition);
+		$('#study-page h2').text(currentSession.wordList[0].word);
+		$('#study-page p').text(currentSession.wordList[0].definition);
 
 		// Append it to view
 		for(var k=0; k<currentSession.wordList.length; k++){
-			$('#tran-study-list').append('<li>' +currentSession.wordList[k].word +'</li>');
+			$('#tran-').append('<li>' +currentSession.wordList[k].word +'</li>');
 		}
 
 		// Check for click event
@@ -38,8 +49,8 @@ function Study(){
 	}
 
 	function navigateWordList(activeWordIndex){
-		$('#tran-study-page h2').text(currentSession.wordList[activeWordIndex].word);
-		$('#tran-study-page p').text(currentSession.wordList[activeWordIndex].definition);
+		$('#study-page h2').text(currentSession.wordList[activeWordIndex].word);
+		$('#study-page p').text(currentSession.wordList[activeWordIndex].definition);
 		
 	}
 

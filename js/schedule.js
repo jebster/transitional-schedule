@@ -63,15 +63,51 @@ function Schedule(){
 	}
 
 	this.loadEquallySchedule = function(){
-
-
-	}
-
-	
-
-	this.navigateWord = function(){
 		
+		this.equally[1][0] = SetA;
+		this.equally[1][1] = SetC;
+
+		this.equally[2][0] = SetB;
+		this.equally[2][1] = SetX;
+
+		this.equally[3][0] = SetA;
+		this.equally[3][1] = SetC;
+
+		this.equally[4][0] = SetB;
+		this.equally[4][1] = SetX;
+
+		this.equally[5][0] = SetA;
+		this.equally[5][1] = SetC;
+
+		this.equally[6][0] = SetB;
+		this.equally[6][1] = SetX;
+
+		this.equally[7][0] = SetA;
+		this.equally[7][1] = SetC;
+
+		this.equally[8][0] = SetB;
+		this.equally[8][1] = SetX;
+
+		this.equally[9][0] = SetA;
+		this.equally[9][1] = SetC;
+
+		this.equally[10][0] = SetB;
+		this.equally[10][1] = SetX;
+
+		this.equally[11][0] = SetA;
+		this.equally[11][1] = SetC;
+
+		this.equally[12][0] = SetB;
+		this.equally[12][1] = SetX;
+
+		this.equally[13][0] = SetA;
+		this.equally[13][1] = SetC;
+
+		this.equally[14][0] = SetB;
+		this.equally[14][1] = SetX;
+
 	}
+
 
 
 

@@ -33,7 +33,7 @@ function initDatabase() {
     queryA.equalTo("set", "A");
     queryA.find({
       success: function(results) {
-        alert("Successfully retrieved " + results.length + " scores.");
+        //alert("Successfully retrieved " + results.length + " scores.");
         
         localStorage.SetA = JSON.stringify(results);
         setLoaded();
@@ -49,7 +49,7 @@ function initDatabase() {
     queryB.equalTo("set", "B");
     queryB.find({
       success: function(results) {
-        alert("Successfully retrieved " + results.length + " scores.");
+        //alert("Successfully retrieved " + results.length + " scores.");
         localStorage.SetB = JSON.stringify(results);
         setLoaded();
       },
@@ -63,7 +63,7 @@ function initDatabase() {
     queryC.equalTo("set", "C");
     queryC.find({
       success: function(results) {
-        alert("Successfully retrieved " + results.length + " scores.");
+        //alert("Successfully retrieved " + results.length + " scores.");
         localStorage.SetC = JSON.stringify(results);
         setLoaded();
       },
@@ -77,7 +77,7 @@ function initDatabase() {
     queryX.equalTo("set", "X");
     queryX.find({
       success: function(results) {
-        alert("Successfully retrieved " + results.length + " scores.");
+        //alert("Successfully retrieved " + results.length + " scores.");
         localStorage.SetX = JSON.stringify(results);
         setLoaded();
       },
@@ -90,5 +90,24 @@ function initDatabase() {
 
 function init() {
 
+    if(localStorage.tCurSession )
+    // keep track of transition current session
+    localStorage.tCurSession = 1;
+    // keep track of equally spaced current session
+    localStorage.eCurSession = 1;
+
+    $('#trans-schedule').click(function(){
+
+        localStorage.tCurCourse = 1;
+        localStorage.eCurCourse = 0;
+    })
+
+    $('#equal-schedule').click(function(){
+
+        localStorage.tCurCourse = 0;
+        localStorage.eCurCourse = 1;
+
+
+    })
 
 }
