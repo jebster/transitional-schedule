@@ -18,32 +18,49 @@
     	<section id="test-page">
             <h1>Session <span class='current-session'>1</span></h1>
             <h3>Current Course: <span class='current-course'>Default</span></h3>
+            <h4>Question: <span id='current-qsn'>0</span>/20</h4>
             <article>
                 <h2>Word</h2>
-                    <label class="radio">
-                        <input type="radio" name="optionsRadios" id="options1" value="option1" checked>none
-                        
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="optionsRadios" id="options2" value="option2">
-                        none
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="optionsRadios" id="options3" value="options3">
-                        none
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="optionsRadios" id="options4" value="options4">
-                        none
-                    </label>
+                    
+                    <input type="radio" name="optionsRadios" id="options1" value="A" ><label id='choice1' for="options1" class="radio">none</label>
 
-      
+                    <input type="radio" name="optionsRadios" id="options2" value="B" ><label id='choice2' for="options2" class="radio">none</label>
+
+                    <input type="radio" name="optionsRadios" id="option3" value="C" ><label id='choice3' for="option3" class="radio">none</label>
+
+
+
+                    <input type="radio" name="optionsRadios" id="options4" value="D" ><label id='choice4' for="options4" class="radio">none</label>
+
+
+                        
+                 
+                    <button id="skip-question">Skip to 19</button>
                 <button id="next-question">Next</button>
-                <a href="study.html" id="next-session">Next Study Session</a>
+                
+                <a id='done' href="#next-session-modal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+
             </article>
         
             
     	</section>
+        <!-- Button to trigger modal -->
+        
+
+        <!-- Modal for next session -->
+        <div id="next-session-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Congratulations!</h3>
+          </div>
+          <div class="modal-body">
+            <p>You have successfully completed this session!</p>
+            <p>You scored <span id="test-score">0</span> out of 20!</p>
+          </div>
+          <div class="modal-footer">
+            <a href="study.html" id="next-session" class="btn btn-primary">Next Session</a>
+          </div>
+        </div>
 
 	
 

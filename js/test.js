@@ -3,15 +3,25 @@ var test = new Test();
 function Test(sessionNo){
 
 	var currentQuestion=0;
+	var currentAns = 'null';
+	var totalCorrect = 0;
 
 	this.init = function(){
 		// Set default word
 		$('#test-page h2').text(currentSession.wordList[0].word);
+		$('#current-qsn').text(currentQuestion+1);
+		$('#choice1').text(currentSession.wordList[0].choice1);
+		$('#choice2').text(currentSession.wordList[0].choice2);
+		$('#choice3').text(currentSession.wordList[0].choice3);
+		$('#choice4').text(currentSession.wordList[0].choice4);
 
-		$('#test-page label:nth-child(1)').html('<input type=\"radio\" name=\"optionsRadios\" id=\"options1\" value=\"option1\" checked>' +currentSession.wordList[0].choice1);
-		$('#test-page label:nth-child(2)').text(currentSession.wordList[0].choice2);
-		$('#test-page label:nth-child(3)').text(currentSession.wordList[0].choice3);
-		$('#test-page label:nth-child(4)').text(currentSession.wordList[0].choice4);
+		currentAns = currentSession.wordList[0].answer;
+		
+
+		//$('#test-page label:nth-child(1)').html('<input type="radio" name="optionsRadios" id="options1" value="option1" checked>' +currentSession.wordList[0].choice1);
+		//$('#test-page label:nth-child(2)').text(currentSession.wordList[0].choice2);
+		//$('#test-page label:nth-child(3)').text(currentSession.wordList[0].choice3);
+		//$('#test-page label:nth-child(4)').text(currentSession.wordList[0].choice4);
 
 		/*
 		$('#test-page li:nth-child(1)').text(currentSession.wordList[0].choice1);
@@ -22,17 +32,37 @@ function Test(sessionNo){
 
 		// Check for click event
 		$('#next-question').click(function(){
+
+			// check answer
+			var chosen_ans = $('input[name=optionsRadios]:checked').val();
+			if(chosen_ans == currentAns) {
+				totalCorrect++;
+			} else {
+				alert('Whoops! The right answer should be: ' +currentAns);
+			}
 		
+			// move on to next question
 			if(currentQuestion<currentSession.wordList.length-1){
 				
 				currentQuestion++;
 				navigateTestList(currentQuestion);
+
 			} else{
-				//end session
+				
+				$('#test-score').text(totalCorrect);
+				$('#done').trigger('click');
 
 			}
 		
 		})
+
+		//Debug
+		$('#skip-question').click(function(){
+			
+			currentQuestion = 19;
+			navigateTestList(currentQuestion);
+		})
+
 
 		//check for next session
 		$('#next-session').click(function(){
@@ -57,10 +87,15 @@ function Test(sessionNo){
 	function navigateTestList(curQsn) {
 
 		$('#test-page h2').text(currentSession.wordList[curQsn].word);
-		$('#test-page li:nth-child(1)').text(currentSession.wordList[curQsn].choice1);
-		$('#test-page li:nth-child(2)').text(currentSession.wordList[curQsn].choice2);
-		$('#test-page li:nth-child(3)').text(currentSession.wordList[curQsn].choice3);
-		$('#test-page li:nth-child(4)').text(currentSession.wordList[curQsn].choice4);
+		$('#current-qsn').text(curQsn+1);
+		$('#choice1').text(currentSession.wordList[curQsn].choice1);
+		$('#choice2').text(currentSession.wordList[curQsn].choice2);
+		$('#choice3').text(currentSession.wordList[curQsn].choice3);
+		$('#choice4').text(currentSession.wordList[curQsn].choice4);
+
+		currentAns = currentSession.wordList[curQsn].answer;
+
+		$('input').removeAttr('checked');
 
 	}
 }

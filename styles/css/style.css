@@ -1,40 +1,7 @@
 /* Fonts */
-@sanSerif: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-@serif: Georgia, Serif;
-
-@borderLight: 1px solid #C2BABA;
-	@borderBlack: 1px solid black;
-
-
 /* Colors */
-@lightBlue: #08C;
-@darkBlue: #01143D;
-@navydarkBlue: #023B47;
-@lightBlueSky: #61BFE4;
-
-@yellow: #F2E085;
-
-@lightOrange: #FCAB55;
-@darkOrange: #EE7F38;
-
-@green: rgb(69, 158, 69);
-@turquoise: #295E52;
-
-@darkGrey: #333;
-@mediumGrey: #717174;
-@lightGrey: #666;
-@ultralightGrey: #939597;
-
 /* Animation */
-.transition (@time: 0.4s) {
-	transition: @time;
-	-webkit-transition: @time;
-	-moz-transition: @time;
-}
-
 /* Border Radius */
-.border-radius(@radius: 30px) {
-	border-radius: @radius;
-	-webkit-border-radius: @radius;
-	-moz-border-radius: @radius;
+#done {
+  display: none;
 }
