@@ -5,3 +5,7 @@
 #done {
   display: none;
 }
+#restart-course,
+#restart-course-msg {
+  display: none;
+}

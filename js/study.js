@@ -7,11 +7,18 @@ function Study(){
 
 	this.init = function(courseType, sessionNo){
 
+
 		// Set Course
 		if(courseType == 'transitional'){
 			$('.current-course').text('Transitional Retrieval');
+			if(localStorage.tCurSession > 14) {
+				alert('You have completed this course!');
+			}
 		}else if(courseType == 'equally'){
 			$('.current-course').text('Equally Spaced Retrieval');
+			if(localStorage.eCurSession > 14) {
+				alert('You have completed this course!');
+			}
 		}
 
 

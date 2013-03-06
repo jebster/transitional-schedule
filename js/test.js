@@ -16,19 +16,7 @@ function Test(sessionNo){
 		$('#choice4').text(currentSession.wordList[0].choice4);
 
 		currentAns = currentSession.wordList[0].answer;
-		
 
-		//$('#test-page label:nth-child(1)').html('<input type="radio" name="optionsRadios" id="options1" value="option1" checked>' +currentSession.wordList[0].choice1);
-		//$('#test-page label:nth-child(2)').text(currentSession.wordList[0].choice2);
-		//$('#test-page label:nth-child(3)').text(currentSession.wordList[0].choice3);
-		//$('#test-page label:nth-child(4)').text(currentSession.wordList[0].choice4);
-
-		/*
-		$('#test-page li:nth-child(1)').text(currentSession.wordList[0].choice1);
-		$('#test-page li:nth-child(2)').text(currentSession.wordList[0].choice2);
-		$('#test-page li:nth-child(3)').text(currentSession.wordList[0].choice3);
-		$('#test-page li:nth-child(4)').text(currentSession.wordList[0].choice4);
-		*/
 
 		// Check for click event
 		$('#next-question').click(function(){
@@ -48,10 +36,10 @@ function Test(sessionNo){
 				navigateTestList(currentQuestion);
 
 			} else{
-				
+
 				$('#test-score').text(totalCorrect);
 				$('#done').trigger('click');
-
+				
 			}
 		
 		})
@@ -79,6 +67,8 @@ function Test(sessionNo){
 				num++;
 				localStorage.eCurSession = num;
 				}
+
+
 		})
 
 	}
