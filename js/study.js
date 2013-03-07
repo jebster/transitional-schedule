@@ -25,14 +25,17 @@ function Study(){
 		// Set Session
 		$('.current-session').text(sessionNo);
 
-		// Set default word
-		$('#study-page h2').text(currentSession.wordList[0].word);
-		$('#study-page p').text(currentSession.wordList[0].definition);
+
 
 		// Append it to view
 		for(var k=0; k<currentSession.wordList.length; k++){
-			$('#tran-').append('<li>' +currentSession.wordList[k].word +'</li>');
+			$('#word-list').append('<li>' +currentSession.wordList[k].word +'</li>');
 		}
+
+		// Set default word
+		$('#study-page h2').text(currentSession.wordList[0].word);
+		$('#study-page p').text(currentSession.wordList[0].definition);
+		$('#word-list li:nth-child(1)').addClass('active-word');
 
 		// Check for click event
 		$('#next-word').click(function(){
@@ -58,6 +61,8 @@ function Study(){
 	function navigateWordList(activeWordIndex){
 		$('#study-page h2').text(currentSession.wordList[activeWordIndex].word);
 		$('#study-page p').text(currentSession.wordList[activeWordIndex].definition);
+		$('#word-list').find('.active-word').removeClass('active-word');
+		$('#word-list li').eq(activeWordIndex).addClass('active-word');
 		
 	}
 

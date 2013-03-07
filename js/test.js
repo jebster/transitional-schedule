@@ -17,31 +17,29 @@ function Test(sessionNo){
 
 		currentAns = currentSession.wordList[0].answer;
 
+		// Style selection
+		$('label').click(function(){
+			$('article').find('.active-selection').removeClass('active-selection');
+			$(this).addClass('active-selection');
+		})
+
 
 		// Check for click event
 		$('#next-question').click(function(){
 
+			resetStyles();
 			// check answer
 			var chosen_ans = $('input[name=optionsRadios]:checked').val();
+
+			// if Correct
 			if(chosen_ans == currentAns) {
 				totalCorrect++;
-			} else {
-				alert('Whoops! The right answer should be: ' +currentAns);
-			}
-		
-			// move on to next question
-			if(currentQuestion<currentSession.wordList.length-1){
-				
-				currentQuestion++;
-				navigateTestList(currentQuestion);
+				nextQuestion();
 
-			} else{
-
-				$('#test-score').text(totalCorrect);
-				$('#done').trigger('click');
-				
+			} else { // if wrong
+				$('.alert').css('opacity', 1);
+				$('#right-ans').text(currentSession.wordList[currentQuestion].definition);
 			}
-		
 		})
 
 		//Debug
@@ -71,6 +69,52 @@ function Test(sessionNo){
 
 		})
 
+	}
+
+	function resetStyles(){
+		$('article').find('.active-selection').removeClass('active-selection');
+		$('.alert').css('opacity', 0);
+
+	}
+
+	function nextQuestion(){
+		// move on to next question
+		if(currentQuestion<currentSession.wordList.length-1){
+			currentQuestion++;
+			navigateTestList(currentQuestion);
+
+		} else{
+			$('#test-score').text(totalCorrect);
+			$('#done').trigger('click');
+			checkFinishCourse();
+		}
+
+
+	}
+
+	function checkFinishCourse(){
+
+		if(localStorage.tCurCourse == 1){
+			if(localStorage.tCurSession == schedule.transitional.length-1){
+				restartCourse();
+			}
+			
+		}else if(localStorage.eCurCourse == 1){
+			if(localStorage.eCurSession == schedule.equally.length-1){
+				restartCourse();
+			}
+		}
+	}
+
+	function restartCourse(){
+		$('#restart-course-msg, #restart-course').css('display', 'block');
+		$('#next-session').css('display', 'none');
+
+		if(localStorage.tCurCourse == 1){
+			localStorage.tCurSession = 1 
+		}else if(localStorage.eCurCourse == 1){
+			localStorage.eCurSession = 1
+		}
 	}
 
 

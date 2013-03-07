@@ -11,25 +11,30 @@
     </head>
 
     <body>
-	    <header>
+	    <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <a class="brand" href="courses.html">Learn Vocabs</a>
+          </div>
+        </div>
+        
 
-	    </header>
-        <h1>Session <span class='current-session'>1</span></h1>
-        <h3>Current Course: <span class='current-course'>Default</span></h3>
-
-    	<section id="study-page">
-            <article>
+    	<section id="study-page" class="body-wrapper">
+            <h1>Session <span class='current-session'>1</span></h1>
+            <h3>Current Course: <span class='current-course'>Default</span></h3>
+            <article class="box-wrapper">
                 <h2>Word</h2>
-                <p>Definition</p>
-                <button id="previous-word">Previous</button>
-                <button id="next-word">Next</button>
+                <p class='p-definition'>Definition</p>
+                <button class="btn btn-large btn-inverse" id="previous-word">Previous</button>
+                <button class="btn btn-large btn-warning" id="next-word">Next</button>
             </article>
-            <ul id="tran-">
+            <ul id="word-list">
                
             </ul>
-            <a href="test.html">Take Test</a>
-            <a href="courses.html">Change Course</a>
-    	</section>
+        </section>
+
+        <a class="btn-float" href="test.html">Take Test</a>
+        <a href="courses.html">Change Course</a>
+
 
 	
 

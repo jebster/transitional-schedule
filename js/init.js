@@ -39,7 +39,7 @@ function initDatabase() {
         setLoaded();
       },
       error: function(error) {
-        alert("Error: " + error.code + " " + error.message);
+        //alert("Error: " + error.code + " " + error.message);
       }
     });
 
@@ -54,7 +54,7 @@ function initDatabase() {
         setLoaded();
       },
       error: function(error) {
-        alert("Error: " + error.code + " " + error.message);
+        //alert("Error: " + error.code + " " + error.message);
       }
     }); 
 
@@ -68,7 +68,7 @@ function initDatabase() {
         setLoaded();
       },
       error: function(error) {
-        alert("Error: " + error.code + " " + error.message);
+        //alert("Error: " + error.code + " " + error.message);
       }
     }); 
 
@@ -82,7 +82,7 @@ function initDatabase() {
         setLoaded();
       },
       error: function(error) {
-        alert("Error: " + error.code + " " + error.message);
+        //alert("Error: " + error.code + " " + error.message);
       }
     }); 
 

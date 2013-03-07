@@ -11,15 +11,17 @@
     </head>
 
     <body>
-	    <header>
+	    <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <a class="brand" href="courses.html">Learn Vocabs</a>
+          </div>
+        </div>
 
-	    </header>
-
-    	<section id="test-page">
+    	<section id="test-page" class="body-wrapper">
             <h1>Session <span class='current-session'>1</span></h1>
             <h3>Current Course: <span class='current-course'>Default</span></h3>
             <h4>Question: <span id='current-qsn'>0</span>/20</h4>
-            <article>
+            <article class="box-wrapper">
                 <h2>Word</h2>
                     
                     <input type="radio" name="optionsRadios" id="options1" value="A" ><label id='choice1' for="options1" class="radio">none</label>
@@ -34,13 +36,20 @@
 
 
                         
-                 
-                    <button id="skip-question">Skip to 19</button>
-                <button id="next-question">Next</button>
+                 <div class="alert alert-error">
+                  The correct answer is: <span id="right-ans"></span>
+                </div>
+
+                <button id="skip-question">Skip to 19</button>
+                <button class='btn btn-success btn-large' id="next-question">Next</button>
                 
                 <a id='done' href="#next-session-modal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
 
+
+
             </article>
+
+            <a href="study.html">Back to Study Page</a>
         
             
     	</section>
@@ -59,8 +68,8 @@
             <p id="restart-course-msg">You have also completed this COURSE! It will now restart.</p>
           </div>
           <div class="modal-footer">
-            <a href="study.html" id="next-session" class="btn btn-primary">Next Session</a>
-            <a href="courses.html" id="restart-course" class="btn btn-primary">Restart Course</a>
+            <a href="study.html" id="next-session" class="btn btn-large btn-success">Next Session</a>
+            <a href="courses.html" id="restart-course" class="btn btn-large btn-success">Restart Course</a>
           </div>
         </div>
 
