@@ -39,7 +39,6 @@ function Test(sessionNo){
 			} else { // if wrong
 				
 				$('.alert').animate({
-					'margin-bottom': '20',
 					'opacity': '1',
 				}, 400);
 				$('#right-ans').text(currentSession.wordList[currentQuestion].definition);
@@ -78,7 +77,6 @@ function Test(sessionNo){
 	function resetStyles(){
 		$('article').find('.active-selection').removeClass('active-selection');
 		$('.alert').animate({
-			'margin-bottom': '0',
 			'opacity': '0',
 		}, 400);
 
