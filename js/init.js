@@ -37,9 +37,10 @@ function initDatabase() {
         
         localStorage.SetA = JSON.stringify(results);
         setLoaded();
+
       },
       error: function(error) {
-        //alert("Error: " + error.code + " " + error.message);
+        alert("Error: " + error.code + " " + error.message);
       }
     });
 
@@ -54,7 +55,7 @@ function initDatabase() {
         setLoaded();
       },
       error: function(error) {
-        //alert("Error: " + error.code + " " + error.message);
+      alert("Error: " + error.code + " " + error.message);
       }
     }); 
 
@@ -68,7 +69,7 @@ function initDatabase() {
         setLoaded();
       },
       error: function(error) {
-        //alert("Error: " + error.code + " " + error.message);
+        alert("Error: " + error.code + " " + error.message);
       }
     }); 
 
@@ -82,7 +83,7 @@ function initDatabase() {
         setLoaded();
       },
       error: function(error) {
-        //alert("Error: " + error.code + " " + error.message);
+        alert("Error: " + error.code + " " + error.message);
       }
     }); 
 
@@ -90,7 +91,6 @@ function initDatabase() {
 
 function init() {
 
-    if(localStorage.tCurSession )
     // keep track of transition current session
     localStorage.tCurSession = 1;
     // keep track of equally spaced current session

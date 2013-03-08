@@ -14,42 +14,46 @@
 	    <div class="navbar navbar-inverse">
           <div class="navbar-inner">
             <a class="brand" href="courses.html">Learn Vocabs</a>
+            <div class="brand current-course"></div>
           </div>
+        </div>
+        <div class="progress progress-striped progress-mobile">
+            <div class="bar" style="width: 0%;"></div>
         </div>
 
     	<section id="test-page" class="body-wrapper">
-            <h1>Session <span class='current-session'>1</span></h1>
-            <h3>Current Course: <span class='current-course'>Default</span></h3>
             <h4>Question: <span id='current-qsn'>0</span>/20</h4>
+            <h1>Session <span class='current-session'>1</span></h1>
+
+            <div class="progress progress-striped progress-desktop">
+                <div class="bar bar-success" style="width: 0%;"></div>
+            </div>
+
+            <h2>Word</h2>
             <article class="box-wrapper">
-                <h2>Word</h2>
+                
                     
                     <input type="radio" name="optionsRadios" id="options1" value="A" ><label id='choice1' for="options1" class="radio">none</label>
-
                     <input type="radio" name="optionsRadios" id="options2" value="B" ><label id='choice2' for="options2" class="radio">none</label>
-
                     <input type="radio" name="optionsRadios" id="option3" value="C" ><label id='choice3' for="option3" class="radio">none</label>
-
-
-
                     <input type="radio" name="optionsRadios" id="options4" value="D" ><label id='choice4' for="options4" class="radio">none</label>
-
-
                         
-                 <div class="alert alert-error">
-                  The correct answer is: <span id="right-ans"></span>
+                <div class="alert alert-error">
+                    The correct answer is: <span id="right-ans"></span>
                 </div>
-
-                <button id="skip-question">Skip to 19</button>
-                <button class='btn btn-success btn-large' id="next-question">Next</button>
                 
-                <a id='done' href="#next-session-modal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
-
-
+                <a class='btn btn-success btn-large next-question' >
+                    Next
+                </a>
+                
 
             </article>
 
+            <button class='btn-next-float next-question'><i class="icon-chevron-right icon-white"></i></button>
+
             <a href="study.html">Back to Study Page</a>
+            <button id="skip-question">Skip to 19</button>
+            <a id='done' href="#next-session-modal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
         
             
     	</section>

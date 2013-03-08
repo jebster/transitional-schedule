@@ -3,24 +3,41 @@
 /* Animation */
 /* Border Radius */
 /************************************
-General Formatting
+Hiding/ Showing Elements
 *************************************/
 #done,
 #restart-course-msg,
-#restart-course {
+#restart-course,
+.progress-mobile,
+.btn-float-mobile {
   display: none;
 }
 .alert {
   opacity: 0;
-  transition: 0.5;
-  -webkit-transition: 0.5;
-  -moz-transition: 0.5;
+  margin-bottom: 0;
 }
+/************************************
+General Formatting
+*************************************/
 #right-ans {
   font-weight: bold;
 }
+h1 {
+  font-weight: 100;
+}
 h2 {
   text-align: center;
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+h4 {
+  float: right;
+  font-weight: 200;
+  bottom: -10px;
+  position: relative;
 }
 .p-definition {
   font-size: 20px;
@@ -29,34 +46,60 @@ h2 {
   width: 600px;
   margin: 0 auto;
 }
+.current-course {
+  float: right !important;
+}
 a.btn-float {
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   width: 150px;
   height: 100px;
-  border: 5px solid black;
+  border: 5px solid #64be6b;
   position: fixed;
-  bottom: -80px;
+  bottom: -90px;
   right: 10px;
-  padding: 10px;
+  padding: 20px;
   background-color: green;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 300;
   color: white;
 }
 a.btn-float:hover {
   font-style: none;
 }
+a.btn-float-mobile {
+  width: 30px;
+  padding: 5px;
+}
+.btn-next-float {
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  width: 100px;
+  height: 50px;
+  border: 5px solid #64be6b;
+  position: fixed;
+  bottom: 10px;
+  right: -55px;
+  padding: 5px;
+  background-color: green;
+  display: none;
+}
+.btn-next-float i {
+  float: left;
+  margin-left: 10px;
+}
 .active-word {
-  background-color: black;
+  background-color: #aaaaaa;
   color: white;
 }
 .active-selection {
-  font-weight: bold;
+  color: green;
 }
 .box-wrapper {
-  border: 1px black solid;
+  border: 1px grey solid;
   padding: 20px;
   margin-bottom: 20px;
   overflow: hidden;
@@ -71,23 +114,33 @@ input {
 /************************************
 Page Elements
 *************************************/
+#home-page h1 {
+  text-align: center;
+}
 #home-page .btn {
   margin: 0 auto 20px;
   display: block;
   width: 230px;
+  height: 100px;
 }
 #study-page article p {
   text-align: center;
+  margin-bottom: 30px;
+  line-height: 30px;
 }
-#study-page .btn-inverse {
-  float: left;
+#study-page .btn-group {
+  width: 400px;
+  display: block;
+  margin: 0 auto;
 }
-#study-page .btn-warning {
-  float: right;
+#study-page .btn {
+  width: 200px;
 }
 #study-page ul {
-  border: 1px black solid;
+  border: 1px grey solid;
   margin: 0 0 20px 0;
+  height: 300px;
+  overflow: scroll;
 }
 #study-page li {
   list-style: none;
@@ -96,5 +149,17 @@ Page Elements
   width: 96%;
 }
 #test-page .btn-success {
-  float: right;
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+#test-page label {
+  line-height: 30px;
+  margin-bottom: 10px;
+  padding-left: 32px;
+}
+#test-page input {
+  top: 5px;
+  position: relative;
+  margin-right: 20px;
 }

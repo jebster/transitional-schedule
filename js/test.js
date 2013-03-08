@@ -24,8 +24,8 @@ function Test(sessionNo){
 		})
 
 
-		// Check for click event
-		$('#next-question').click(function(){
+		// Check for next question event
+		$('.next-question').click(function(){
 
 			resetStyles();
 			// check answer
@@ -37,7 +37,11 @@ function Test(sessionNo){
 				nextQuestion();
 
 			} else { // if wrong
-				$('.alert').css('opacity', 1);
+				
+				$('.alert').animate({
+					'margin-bottom': '20',
+					'opacity': '1',
+				}, 400);
 				$('#right-ans').text(currentSession.wordList[currentQuestion].definition);
 			}
 		})
@@ -73,11 +77,17 @@ function Test(sessionNo){
 
 	function resetStyles(){
 		$('article').find('.active-selection').removeClass('active-selection');
-		$('.alert').css('opacity', 0);
+		$('.alert').animate({
+			'margin-bottom': '0',
+			'opacity': '0',
+		}, 400);
 
 	}
 
 	function nextQuestion(){
+
+		var progress = (currentQuestion+1)/(currentSession.wordList.length)*100;
+		$('.bar').css('width', progress +'%');
 		// move on to next question
 		if(currentQuestion<currentSession.wordList.length-1){
 			currentQuestion++;

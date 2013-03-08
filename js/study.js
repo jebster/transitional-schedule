@@ -4,21 +4,14 @@ function Study(){
 
 	var activeWordIndex = 0;
 
-
 	this.init = function(courseType, sessionNo){
 
 
 		// Set Course
 		if(courseType == 'transitional'){
-			$('.current-course').text('Transitional Retrieval');
-			if(localStorage.tCurSession > 14) {
-				alert('You have completed this course!');
-			}
+			$('.current-course').text('Transitional');
 		}else if(courseType == 'equally'){
-			$('.current-course').text('Equally Spaced Retrieval');
-			if(localStorage.eCurSession > 14) {
-				alert('You have completed this course!');
-			}
+			$('.current-course').text('Equally Spaced');
 		}
 
 
@@ -44,6 +37,17 @@ function Study(){
 				activeWordIndex++;
 				navigateWordList(activeWordIndex);
 			}
+
+			// If last question, prompt user to take a test
+			if(activeWordIndex == currentSession.wordList.length-1){
+				$('.btn-float').animate({
+				    bottom: '+=30',
+				  }, 400);
+
+				$('.btn-float').animate({
+				    bottom: '-=30',
+				  }, 400);
+			}
 			
 		})
 
@@ -59,14 +63,31 @@ function Study(){
 	}
 
 	function navigateWordList(activeWordIndex){
+
+		// Set styling stuff
 		$('#study-page h2').text(currentSession.wordList[activeWordIndex].word);
 		$('#study-page p').text(currentSession.wordList[activeWordIndex].definition);
+		$('#current-qsn').text(activeWordIndex+1);
 		$('#word-list').find('.active-word').removeClass('active-word');
 		$('#word-list li').eq(activeWordIndex).addClass('active-word');
+
+		// Set Progress Bar
+		var progress = (activeWordIndex+1)/(currentSession.wordList.length)*100;
+		$('.bar').css('width', progress +'%');
+
 		
+
+		// Scrolling of words to go above
+		if(activeWordIndex%3 == 0) {
+			$('#word-list').animate({
+		     	scrollTop: 40*activeWordIndex,
+			}, 1000);
+		}
+
+		
+			
 	}
 
-
-	
-
 }
+
+

@@ -39,24 +39,43 @@
 	-moz-border-radius: @radius;
 }
 /************************************
-General Formatting
+Hiding/ Showing Elements
 *************************************/
-#done, #restart-course-msg, #restart-course {
+#done, #restart-course-msg, #restart-course, .progress-mobile, .btn-float-mobile {
 	display: none;
 }
 
 .alert {
 	opacity: 0;
-	.transition(0.5);
+	margin-bottom: 0;
 }
 
+/************************************
+General Formatting
+*************************************/
 #right-ans {
 	font-weight: bold;
 }
 
+h1 {
+	font-weight: 100;
+}
+
 h2 {
 	text-align: center;
+	background-color: black;
+	color: white;
+	padding: 10px 0;
+	margin-bottom: 0;
+	margin-top: 0;
 }	
+
+h4 {
+	float: right;
+	font-weight: 200;
+	bottom: -10px;
+	position: relative;
+}
 
 .p-definition {
 	font-size: 20px;
@@ -67,18 +86,23 @@ h2 {
 	margin: 0 auto;
 }
 
+.current-course {
+	float: right !important;
+}
+
 a.btn-float {
 	.border-radius(30px);
 	width: 150px;
 	height: 100px;
-	border: 5px solid black;
+	border: 5px solid rgb(100, 190, 107);
 	position: fixed;
-	bottom: -80px;
+	bottom: -90px;
 	right: 10px;
-	padding: 10px;
+	padding: 20px;
 	background-color: green;
 	text-align: center;
-	font-size: 20px;
+	font-size: 25px;
+	font-weight: 300;
 	color: white;
 
 	&:hover {
@@ -86,17 +110,40 @@ a.btn-float {
 	}
 }
 
+a.btn-float-mobile {
+	width: 30px;
+	padding: 5px;
+}
+
+.btn-next-float {
+	.border-radius(30px);
+	width: 100px;
+	height: 50px;
+	border: 5px solid rgb(100, 190, 107);
+	position: fixed;
+	bottom: 10px;
+	right: -55px;
+	padding: 5px;
+	background-color: green;
+	display: none;
+
+	i {
+		float: left;
+		margin-left: 10px;
+	}
+}
+
 .active-word {
-	background-color: black;
+	background-color: rgb(170, 170, 170);
 	color: white;
 }
 
 .active-selection {
-	font-weight: bold;
+	color: green;
 }
 
 .box-wrapper {
-	border: 1px black solid;
+	border: 1px grey solid;
 	padding: 20px;
 	margin-bottom: 20px;
 	overflow: hidden;
@@ -117,10 +164,15 @@ Page Elements
 *************************************/
 
 #home-page {
+
+	h1 {
+		text-align: center;
+	}
 	.btn {
 		margin: 0 auto 20px;
 		display: block;
 		width: 230px;
+		height: 100px;
 	}
 }
 
@@ -130,20 +182,28 @@ Page Elements
 
 		p {
 			text-align: center;
+			margin-bottom: 30px;
+			line-height: 30px;
 		}
 	}
 
-	.btn-inverse {
-		float: left
+	.btn-group {
+		width: 400px;
+		display: block;
+		margin: 0 auto;
 	}
 
-	.btn-warning {
-		float: right;
+	.btn {
+		width: 200px;
 	}
+
+
 
 	ul {
-		border: 1px black solid;
+		border: 1px grey solid;
 		margin: 0 0 20px 0;
+		height: 300px;
+		overflow: scroll;
 	}
 
 	li {
@@ -155,7 +215,23 @@ Page Elements
 }
 
 #test-page {
-	.btn-success{
-		float: right;
+
+	.btn-success {
+		display: block;
+		width: 200px;
+		margin: 0 auto;
 	}
+
+	label {
+		line-height: 30px;
+		margin-bottom: 10px;
+		padding-left: 32px;
+	}
+
+	input {
+		top: 5px;
+		position: relative;
+		margin-right: 20px;
+	}
+
 }

@@ -14,26 +14,42 @@
 	    <div class="navbar navbar-inverse">
           <div class="navbar-inner">
             <a class="brand" href="courses.html">Learn Vocabs</a>
+            <div class="brand current-course"></div>
           </div>
+        </div>
+        <div class="progress progress-striped progress-mobile">
+            <div class="bar" style="width: 0%;"></div>
         </div>
         
 
     	<section id="study-page" class="body-wrapper">
+            <h4>Word: <span id='current-qsn'>0</span>/20</h4>
             <h1>Session <span class='current-session'>1</span></h1>
-            <h3>Current Course: <span class='current-course'>Default</span></h3>
+
+            <div class="progress progress-striped progress-desktop">
+                <div class="bar" style="width: 0%;"></div>
+            </div>
+
+            <h2>Word</h2>
             <article class="box-wrapper">
-                <h2>Word</h2>
                 <p class='p-definition'>Definition</p>
-                <button class="btn btn-large btn-inverse" id="previous-word">Previous</button>
-                <button class="btn btn-large btn-warning" id="next-word">Next</button>
+                <div class="btn-group">
+                    <button class="btn btn-large" id="previous-word">Previous</button>
+                    <button class="btn btn-large btn-warning" id="next-word">Next</button>
+                </div>
+                
             </article>
             <ul id="word-list">
                
             </ul>
+            <a href="courses.html">Change Course</a>
         </section>
 
-        <a class="btn-float" href="test.html">Take Test</a>
-        <a href="courses.html">Change Course</a>
+        <a class="btn-float btn-float-desktop" href="test.html">Take Test</a>
+        <a class="btn-float btn-float-mobile" href="test.html">
+            <i class="icon-tasks icon-white"></i>
+        </a>
+        
 
 
 	
