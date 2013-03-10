@@ -45,8 +45,10 @@
   }
   .modal.fade.in {
     top: 0;
+    right: 0;
+    left: auto;
   }
-  #test-page .btn {
+  #test-page .btn-large {
     display: none;
   }
   #test-page label {
@@ -58,21 +60,21 @@
     margin-right: 5px;
     top: 0;
   }
-  #study-page ul {
-    height: 140px;
-  }
   .progress {
     width: 100%;
   }
   .body-wrapper {
     width: 92%;
   }
+  #study-page ul {
+    height: 140px;
+  }
   #study-page .btn-group {
     width: 100%;
     display: block;
     margin: 0 auto;
   }
-  #study-page .btn {
+  #study-page .btn-large {
     width: 50%;
   }
 }

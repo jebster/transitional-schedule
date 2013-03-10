@@ -1,5 +1,13 @@
 /* Fonts */
 /* Colors */
+@font-face {
+  font-family: Houdini;
+  src: url('../../fonts/Houdini.ttf');
+}
+@font-face {
+  font-family: Judas;
+  src: url('../../fonts/JudasPriest.ttf');
+}
 /* Animation */
 /* Border Radius */
 /************************************
@@ -110,6 +118,9 @@ input {
   font-size: 20px;
   margin-bottom: 20px;
 }
+a.brand {
+  font-family: Judas;
+}
 /************************************
 Page Elements
 *************************************/
@@ -120,7 +131,6 @@ Page Elements
   margin: 0 auto 20px;
   display: block;
   width: 230px;
-  height: 100px;
 }
 #study-page article p {
   text-align: center;
@@ -132,7 +142,7 @@ Page Elements
   display: block;
   margin: 0 auto;
 }
-#study-page .btn {
+#study-page .btn-large {
   width: 200px;
 }
 #study-page ul {
@@ -161,4 +171,15 @@ Page Elements
   top: 5px;
   position: relative;
   margin-right: 20px;
+}
+#test-score {
+  font-size: 40px;
+}
+.modal-body p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 25px;
+}
+#skip-question {
+  display: none;
 }

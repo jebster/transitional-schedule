@@ -25,6 +25,18 @@
 @lightGrey: #666;
 @ultralightGrey: #939597;
 
+@font-face
+{
+	font-family: Houdini;
+	src: url('../../fonts/Houdini.ttf');
+}
+
+@font-face
+{
+	font-family: Judas;
+	src: url('../../fonts/JudasPriest.ttf');
+}
+
 /* Animation */
 .transition (@time: 0.4s) {
 	transition: @time;
@@ -157,6 +169,9 @@ input {
 	margin-bottom: 20px;
 }
 
+a.brand {
+	font-family: Judas;
+}
 
 /************************************
 Page Elements
@@ -171,7 +186,6 @@ Page Elements
 		margin: 0 auto 20px;
 		display: block;
 		width: 230px;
-		height: 100px;
 	}
 }
 
@@ -192,7 +206,7 @@ Page Elements
 		margin: 0 auto;
 	}
 
-	.btn {
+	.btn-large {
 		width: 200px;
 	}
 
@@ -234,3 +248,21 @@ Page Elements
 	}
 
 }
+
+#test-score {
+	font-size: 40px;
+}
+
+.modal-body {
+	p {
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 25px;
+	}
+}
+
+#skip-question {
+	display: none;
+}
+
+
